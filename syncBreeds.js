@@ -9,9 +9,10 @@ const breedDetailsFromFile = function(breed, functionToRunWhenThingsAreDone) {
 
     if (!error) {
       functionToRunWhenThingsAreDone(data);
+    } else {
+      functionToRunWhenThingsAreDone(undefined);
     }
 
-    return console.log('error', error);
   });
 
 };
@@ -21,3 +22,5 @@ const printOutCatBreed = breed => {
 }
 
 breedDetailsFromFile('Bombay', printOutCatBreed);
+
+module.exports = breedDetailsFromFile;
